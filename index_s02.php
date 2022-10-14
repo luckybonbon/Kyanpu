@@ -25,17 +25,26 @@
         $SQLstring = "SELECT * FROM pyclass WHERE level=1 ORDER BY sort";
         $pyclass01 = mysqli_query($link, $SQLstring);
         ?>
-        <!-- navbar主選單列 -->
+        <!-- navbar主選單列 
+                 .navbar配色方案類的包裝
+                 .navbar-expand-(sm,md,lg,xl) 響應式摺疊選單
+                 .navbar-brand 您的公司、產品、項目名稱-->
         <nav class="navbar navbar-expand-lg navbar-light ">
             <a class="navbar-brand" href="#"><img src="images/logo_01.png" class="img-fluid rounded-circle logo" alt="露營商店"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+            <!-- .collapse 隱藏內容
+                 .nav 使用flexbox建構
+                 .nav-link 連結字體設定
+                 .navbar-nav 全高度 以列排列 選單
+                 .mx-auto  margin-x:auto; 水平置中
+                 .dropdown 下拉
+                 .dropdown-toggle 下拉符號-->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item dropdown">
-                        <a href="#" id="menu" data-toggle="dropdown" class="nav-link dropdown-toggle">測試中心</a>
+                        <a href="#" id="menu" data-toggle="dropdown" class="nav-link dropdown-toggle">服務項目</a>
                         <ul class="dropdown-menu">
                             <?php while ($pyclass01_Rows = mysqli_fetch_array($pyclass01)) { ?>
                                 <li class="dropdown-item dropdown-submenu">
@@ -90,13 +99,11 @@
                             <a class="dropdown-item" href="#">供投資人專區</a>
                         </div>
                     </li>
-
                 </ul>
-
             </div>
         </nav><!--   fixed-top -->
         <!-- carousel輪播 -->
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+        <!-- <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="images/carousel01.jpg" class="d-block w-100" alt="...">
@@ -116,10 +123,8 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </button>
-        </div>
-        <!-- <div class="video-background container-fluid">
-        <iframe width="1239" height="697" src="https://www.youtube.com/embed/V96aqND_F8w" title="ゆるキャン△聖地巡礼 第一弾！#浩庵キャンプ場　以动漫的方式打开露营 第一弹.--【摇曳露营】圣地巡礼" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div> -->
+
 
     </section>
 
@@ -136,123 +141,174 @@
                      .col-xxl-1~12 超大型螢幕    -->
         <div class="container-fluid">
             <div class="row">
-                <div class="card col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <div id="carouselExampleControlsNoTouching1" class="carousel slide" data-touch="false" data-interval="false">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="images/tent01.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">圓頂型帳篷</h5>
-                                        <p class="card-text content_f">只要使用兩至三根杆子就能夠組合合成，規模比較小的帳篷類型。由於天花板的造型就像圓球一般，因此被稱之為圓頂型帳篷，亦稱蒙古包式帳篷。圓頂型帳篷的優點如下：
-                                        <ul>
-                                            <li>比較容易設置</li>
-                                            <li>就算只有一個人也能夠組合完成</li>
-                                            <li>搬運上相當輕鬆</li>
-                                        </ul>
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
+                <div class="col-md-3 col-12">
+                    <!-- 導覽列
+                         .accordion 手風琴導覽列 
+                             .card-header 導覽列第一層
+                             .card-body   導覽列內容-->
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        露營預約
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    北部
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="images/tent02.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">家庭帳篷</h5>
-                                        <p class="card-text content_f">
-                                            與圓頂型帳篷相比，家庭用帳篷在尺寸上屬於比較大的帳篷類型。能夠同時擁有客廳以及寢室，非常適合長期露營，亦稱別墅式帳篷。家庭用帳篷優點如下：
-                                        <ul>
-                                            <li>內部空間寬廣，頂端高度也高，具有高舒適性</li>
-                                            <li>能夠同時容納多人居住</li>
-                                        </ul>
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="images/tent03.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">圓屋型帳篷</h5>
-                                        <p class="card-text content_f">
-                                            圓屋型的帳篷是將圓頂型帳篷（蒙古包式帳篷）以及家庭帳篷（別墅式帳篷）兩者特徵進行合併的結果，亦稱圓頂別墅帳篷，圓屋型帳篷具有以下特性：
-                                        <ul>
-                                            <li>如同圓頂型帳篷一般容易設置</li>
-                                            <li>有著家庭別墅型帳篷的舒適感</li>
-                                        </ul>
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
+                                <div class="card-body">
+                                    中部
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-target="#carouselExampleControlsNoTouching1" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-target="#carouselExampleControlsNoTouching1" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </button>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        露營商品
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <i class="fa-solid fa-campground">帳篷</i>
+                                </div>
+                                <div class="card-body">
+                                    睡袋
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        熱銷商品
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <i class="fa-solid fa-campground">帳篷</i>
+                                </div>
+                                <div class="card-body">
+                                    睡袋
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- 露營推廣片 youtube自訂css-->
+                        <div class="row youtube_card">
+                            <div class="youtube_title">露營推廣</div>
+                            <div class="video-background col-md-12 ">
+                                <iframe width="100%" height="100%" class="youtube_mv" src="https://www.youtube.com/embed/V96aqND_F8w" title="ゆるキャン△聖地巡礼 第一弾！#浩庵キャンプ場　以动漫的方式打开露营 第一弹.--【摇曳露营】圣地巡礼" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="card col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <div id="carouselExampleControlsNoTouching2" class="carousel slide" data-touch="false" data-interval="false">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="images/40723005.webp" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">【黑鹿 BLACKDEER 】超輕量羽絨睡袋</h5>
-                                        <p class="card-text content_f">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="card col-md-9 col-12">
+                    <!-- .breadcrumb麵包屑 -->
+                    <!-- 麵包屑第一層 -->
+                    <!-- <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active" aria-current="page">Home</li>
+                        </ol>
+                    </nav> -->
+                    <!-- 麵包屑第二層 -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">熱銷商品</li>
+                        </ol>
+                    </nav>
+                    <!-- carousel_hot熱銷商品輪播 -->
+                    <div id="carousel_hot" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel_hot" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel_hot" data-slide-to="1"></li>
+                            <li data-target="#carousel_hot" data-slide-to="2"></li>
+                        </ol>
+                        <!-- 熱銷產品列 -->
+                        <div class="carousel-inner">
+                            <!-- 第一頁熱銷產品 -->
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="card col-md-6 col-6" style="width: 18rem;">
+                                        <img src="./images/m_tent1_1.webp" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">【TAS極限運動】戶外露營專用速開式帳蓬(戶外露營篷 3-4人 露營 家庭旅遊 野餐 帳篷 防水防風 防蚊蟲)</h5>
+                                            <p class="card-text">
+                                                3秒 速開搭建 輕巧便攜<br>
+                                                高密度防蟲紗窗，通風透氣<br>
+                                                雙門附有天窗蓋 通風性能好<br>
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="images/45367434.webp" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text content_f">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <div class="card col-md-6 col-6" style="width: 18rem;">
+                                        <img src="./images/m_clight1_1.webp" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">【aibo】USB充電式 360°照明 復古LED露營燈(長效續航)</h5>
+                                            <p class="card-text">
+                                                超亮COB LED燈，大功率照<br>
+                                                勾環設計，方便手提/吊掛/平放<br>
+                                                可充電式設計，環保節能<br>
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-target="#carouselExampleControlsNoTouching2" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-target="#carouselExampleControlsNoTouching2" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card col-md-4">
-                    <div class="card">
-                        <div id="carouselExampleControlsNoTouching3" class="carousel slide" data-touch="false" data-interval="false">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="images/70000.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text content_f">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <!-- 第二頁熱銷產品 -->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="card col-md-6 col-6" style="width: 18rem;">
+                                        <img src="./images/m_sbag1_1.webp" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">【LONEPINE】加大款 全開式保暖睡袋 防水極地PRO/睡袋/冬季/保暖/露營(兩色任選)</h5>
+                                            <p class="card-text">
+                                                ▲高強度防撕裂防潑水格紋布<br>
+                                                ▲極限溫度可達-10度<br>
+                                                ▲收納輕巧,方便攜帶<br>
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        </div>
+                                    </div>
+                                    <div class="card col-md-6 col-6" style="width: 18rem;">
+                                        <img src="./images/m_tent1_1.webp" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">【TAS極限運動】戶外露營專用速開式帳蓬(戶外露營篷 3-4人 露營 家庭旅遊 野餐 帳篷 防水防風 防蚊蟲)</h5>
+                                            <p class="card-text">
+                                                3秒 速開搭建 輕巧便攜<br>
+                                                高密度防蟲紗窗，通風透氣<br>
+                                                雙門附有天窗蓋 通風性能好<br>
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-target="#carouselExampleControlsNoTouching3" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-target="#carouselExampleControlsNoTouching3" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </button>
+                            <!-- 第三頁熱銷產品 不要顯示 -->
+                            <!-- <div class="carousel-item">
+                                <img src="..." class="d-block w-100" alt="...">
+                            </div> -->
                         </div>
+                        <!-- 輪播按鍵"上一頁" -->
+                        <button class="carousel-control-prev hand-button" type="button" data-target="#carousel_hot" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </button>
+                        <!-- 輪播按鍵"下一頁 -->
+                        <button class="carousel-control-next hand-button" type="button" data-target="#carousel_hot" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </button>
                     </div>
                 </div>
             </div>
-    
-            
         </div>
 
     </section>

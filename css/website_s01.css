@@ -1,15 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Righteous&display=swap');/*載入網頁字型*/
 body{
-    font-family: Arial, 'Noto Serif TC', sans-serif;
+    font-family: Arial, 'Noto Serif TC', sans-serif;/*導入字型*/
     font-size: 14pt;
     /* padding-top: 60px; */
 }
+/* logo圖設定 */
 .logo{
     width: 50px;
     height: 50px;
     border: 3px solid #fff;
     margin-left: 10px;
 }
+/* 主選單列設定start ------------------- */
 .navbar{
     padding: 0px;
     background-color: #ebc4a4;
@@ -23,14 +25,38 @@ body{
     color: #337ab7 !important;
     font-size: larger;
 }
+/*滑鼠變換*/
 .dropdown .dropdown-item:hover,
 .dropdown .dropdown-item:focus{
     color: #fff !important;
-    background-color: #337AB7;
+    background-color: rgba(255, 153, 0, 0.5);
 }
-
+/* 選單列設定end ------------------- */
+/* hand-button輪播按鈕 */
+.hand-button{
+    background-color: lightgray;
+    /* position: absolute; */
+    margin:auto 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+/* youtube設定start */
+.youtube_card{
+    margin-bottom: 10px;
+}
+.youtube_title{
+    margin: auto;
+    font-size: 2rem;
+    color: rgb(255, 146, 38);
+}
+.youtube_mv{
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+/* youtube設定end */
 #content{
-    margin:50px;
+    margin:10px;
     display: flex;
 }
 .content_f{
